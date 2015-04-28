@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
@@ -16,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="Fgq-uV-CMn" userLabel="timeLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="Fgq-uV-CMn" userLabel="timeLabel">
                                 <rect key="frame" x="47" y="132" width="421" height="194"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="JHV-G1-zT1"/>
@@ -35,22 +36,96 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SAW-ml-7Qq">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0rd-Fa-fcf"/>
+                                    <constraint firstAttribute="height" constant="100" id="3dk-H7-AZM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0rd-Fa-fcf"/>
+                                        <exclude reference="3dk-H7-AZM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="0rd-Fa-fcf"/>
+                                        <include reference="3dk-H7-AZM"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="startTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7V1-P1-Zu6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swb-8W-VpF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0bN-FY-SyD"/>
+                                    <constraint firstAttribute="height" constant="100" id="Kgo-J2-Zqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="End">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0bN-FY-SyD"/>
+                                        <exclude reference="Kgo-J2-Zqh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="0bN-FY-SyD"/>
+                                        <include reference="Kgo-J2-Zqh"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="endTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fbp-Dy-UyA"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.14140034597022708" green="0.51698626893939381" blue="0.11624303384092897" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.84978693181818188" green="0.0" blue="0.0085416502613195663" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="swb-8W-VpF" secondAttribute="trailing" constant="10" id="A9w-ye-aZg"/>
+                            <constraint firstItem="SAW-ml-7Qq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="10" id="ApQ-kq-uwq"/>
                             <constraint firstItem="Fgq-uV-CMn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="BaZ-45-hz0"/>
                             <constraint firstAttribute="centerX" secondItem="Fgq-uV-CMn" secondAttribute="centerX" id="Hlw-qj-YW4"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="SAW-ml-7Qq" secondAttribute="bottom" constant="30" id="KWp-VU-cdr"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="swb-8W-VpF" secondAttribute="bottom" constant="30" id="w5k-c6-5Gh"/>
                         </constraints>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="SAW-ml-7Qq"/>
+                                <exclude reference="swb-8W-VpF"/>
+                            </mask>
                             <mask key="constraints">
                                 <exclude reference="BaZ-45-hz0"/>
                                 <exclude reference="Hlw-qj-YW4"/>
+                                <exclude reference="ApQ-kq-uwq"/>
+                                <exclude reference="A9w-ye-aZg"/>
+                                <exclude reference="KWp-VU-cdr"/>
+                                <exclude reference="w5k-c6-5Gh"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="SAW-ml-7Qq"/>
+                                <include reference="swb-8W-VpF"/>
+                            </mask>
                             <mask key="constraints">
                                 <include reference="BaZ-45-hz0"/>
                                 <include reference="Hlw-qj-YW4"/>
+                                <include reference="ApQ-kq-uwq"/>
+                                <include reference="A9w-ye-aZg"/>
+                                <include reference="KWp-VU-cdr"/>
+                                <include reference="w5k-c6-5Gh"/>
                             </mask>
                         </variation>
                     </view>
@@ -60,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="353" y="453.75"/>
+            <point key="canvasLocation" x="68" y="369"/>
         </scene>
     </scenes>
 </document>
