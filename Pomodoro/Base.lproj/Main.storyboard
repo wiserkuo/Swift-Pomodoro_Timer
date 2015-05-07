@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1jN-Gw-nKI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
@@ -30,7 +30,8 @@
                                         <exclude reference="JHV-G1-zT1"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular">
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="117" y="70" width="367" height="150"/>
                                     <mask key="constraints">
                                         <include reference="JHV-G1-zT1"/>
                                     </mask>
@@ -90,6 +91,14 @@
                                     <action selector="endTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fbp-Dy-UyA"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4VI-Gm-9Nx" userLabel="nameTextField">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="216" y="385" width="168" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.84978693181818188" green="0.0" blue="0.0085416502613195663" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -98,16 +107,21 @@
                             <constraint firstItem="Fgq-uV-CMn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="BaZ-45-hz0"/>
                             <constraint firstAttribute="centerX" secondItem="Fgq-uV-CMn" secondAttribute="centerX" id="Hlw-qj-YW4"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="SAW-ml-7Qq" secondAttribute="bottom" constant="30" id="KWp-VU-cdr"/>
+                            <constraint firstAttribute="centerY" secondItem="4VI-Gm-9Nx" secondAttribute="centerY" id="R4H-1h-1E0"/>
+                            <constraint firstAttribute="centerX" secondItem="4VI-Gm-9Nx" secondAttribute="centerX" id="lXb-70-SBY"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="swb-8W-VpF" secondAttribute="bottom" constant="30" id="w5k-c6-5Gh"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="SAW-ml-7Qq"/>
                                 <exclude reference="swb-8W-VpF"/>
+                                <exclude reference="4VI-Gm-9Nx"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BaZ-45-hz0"/>
                                 <exclude reference="Hlw-qj-YW4"/>
+                                <exclude reference="R4H-1h-1E0"/>
+                                <exclude reference="lXb-70-SBY"/>
                                 <exclude reference="ApQ-kq-uwq"/>
                                 <exclude reference="A9w-ye-aZg"/>
                                 <exclude reference="KWp-VU-cdr"/>
@@ -118,10 +132,13 @@
                             <mask key="subviews">
                                 <include reference="SAW-ml-7Qq"/>
                                 <include reference="swb-8W-VpF"/>
+                                <include reference="4VI-Gm-9Nx"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="BaZ-45-hz0"/>
                                 <include reference="Hlw-qj-YW4"/>
+                                <include reference="R4H-1h-1E0"/>
+                                <include reference="lXb-70-SBY"/>
                                 <include reference="ApQ-kq-uwq"/>
                                 <include reference="A9w-ye-aZg"/>
                                 <include reference="KWp-VU-cdr"/>
@@ -129,13 +146,97 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="TSc-nS-MXR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="bookmarks" id="neg-XM-hs4">
+                            <connections>
+                                <segue destination="5CR-vq-m80" kind="show" id="XHt-qI-0yw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="nameTextField" destination="4VI-Gm-9Nx" id="did-8E-h8D"/>
                         <outlet property="timeLabel" destination="Fgq-uV-CMn" id="UK1-RX-97H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="369"/>
+            <point key="canvasLocation" x="534" y="361.5"/>
+        </scene>
+        <!--Record View Controller-->
+        <scene sceneID="Pwh-PU-OVe">
+            <objects>
+                <tableViewController id="IZz-Nn-mhJ" customClass="RecordViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fT5-88-sgy">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="jYu-Bc-Yvj">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jYu-Bc-Yvj" id="Hox-CY-dbP">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="IZz-Nn-mhJ" id="Jc9-Gi-HZe"/>
+                            <outlet property="delegate" destination="IZz-Nn-mhJ" id="b10-q1-0A3"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3Bv-hO-am6">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="f0M-Tq-ALP">
+                            <connections>
+                                <segue destination="2lH-23-Xg0" kind="unwind" unwindAction="cancel:" id="PIZ-N5-RL6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="e5Q-bh-tRl">
+                            <connections>
+                                <action selector="dateTapped:" destination="IZz-Nn-mhJ" id="UJL-MH-SOd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ny6-iT-GTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2lH-23-Xg0" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2171" y="361.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JI4-7X-RVf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1jN-Gw-nKI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lKD-Xq-H9L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="o6S-xo-70y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="giC-fi-siU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-156" y="361.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q3X-Ez-5BD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5CR-vq-m80" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XJD-0z-CBr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IZz-Nn-mhJ" kind="relationship" relationship="rootViewController" id="mpG-xc-9eQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBl-fb-EQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="361.5"/>
         </scene>
     </scenes>
 </document>
