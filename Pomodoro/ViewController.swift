@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-class ViewController: UIViewController {
+class ViewController: UIViewController ,UITextFieldDelegate {
     @IBOutlet weak var timeLabel: UILabel!
     var startTime = NSTimeInterval()
     var targetTime :Int?
@@ -17,7 +17,10 @@ class ViewController: UIViewController {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as!AppDelegate).managedObjectContext
     
     @IBOutlet weak var nameTextField: UITextField!
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
     
     @IBAction func startTapped(sender: AnyObject) {
         println("start")
@@ -125,7 +128,7 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor(red: 0.9, green: 0, blue: 0, alpha: 1)
         status=0
         targetTime = 25*60
-        
+        nameTextField.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
         
     }

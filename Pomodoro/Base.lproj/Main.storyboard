@@ -95,9 +95,6 @@
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="216" y="385" width="168" height="30"/>
-                                </variation>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.84978693181818188" green="0.0" blue="0.0085416502613195663" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,12 +115,12 @@
                                 <exclude reference="4VI-Gm-9Nx"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="BaZ-45-hz0"/>
-                                <exclude reference="Hlw-qj-YW4"/>
                                 <exclude reference="R4H-1h-1E0"/>
                                 <exclude reference="lXb-70-SBY"/>
                                 <exclude reference="ApQ-kq-uwq"/>
                                 <exclude reference="A9w-ye-aZg"/>
+                                <exclude reference="BaZ-45-hz0"/>
+                                <exclude reference="Hlw-qj-YW4"/>
                                 <exclude reference="KWp-VU-cdr"/>
                                 <exclude reference="w5k-c6-5Gh"/>
                             </mask>
@@ -135,12 +132,12 @@
                                 <include reference="4VI-Gm-9Nx"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="BaZ-45-hz0"/>
-                                <include reference="Hlw-qj-YW4"/>
                                 <include reference="R4H-1h-1E0"/>
                                 <include reference="lXb-70-SBY"/>
                                 <include reference="ApQ-kq-uwq"/>
                                 <include reference="A9w-ye-aZg"/>
+                                <include reference="BaZ-45-hz0"/>
+                                <include reference="Hlw-qj-YW4"/>
                                 <include reference="KWp-VU-cdr"/>
                                 <include reference="w5k-c6-5Gh"/>
                             </mask>
@@ -167,6 +164,7 @@
             <objects>
                 <tableViewController id="IZz-Nn-mhJ" customClass="RecordViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fT5-88-sgy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
